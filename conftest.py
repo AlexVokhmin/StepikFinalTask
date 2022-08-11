@@ -14,7 +14,7 @@ def pytest_addoption(parser):
                      help='You must to write browser name with \'--browser-name=\'')
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture(scope='class')
 def browser(request):
     lang = request.config.getoption('language')
     browser_name = request.config.getoption('browser_name')
