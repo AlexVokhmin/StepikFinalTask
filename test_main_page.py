@@ -5,8 +5,9 @@ from .pages.basket_page import BasketPage
 import pytest
 link = "http://selenium1py.pythonanywhere.com/"
 
+
 @pytest.mark.login_guest
-class TestLoginFromMainPage():
+class TestLoginFromMainPage:
     def test_guest_can_add_product_to_basket(self, browser):
         main_page = MainPage(browser, link)
         main_page.open()

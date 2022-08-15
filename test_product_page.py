@@ -13,7 +13,7 @@ class TestUserAddToBasketFromProductPage:
 
     @pytest.fixture(scope='function', autouse=True)
     def setup(self, browser):
-        link = 'http://selenium1py.pythonanywhere.com/ru/accounts/login/'
+        link = 'http://selenium1py.pythonanywhere.com/accounts/login/'
         reg_page = LoginPage(browser, link)
         reg_page.open()
         email = ''.join(random.choices(string.ascii_lowercase, k=random.randint(5, 7))) + '@mail.ru'
@@ -21,7 +21,7 @@ class TestUserAddToBasketFromProductPage:
         reg_page.register_new_user(email, password)
         reg_page.should_be_authorized_user()
         yield
-        reg_page.logout()
+        reg_page.logout() # добавил разлогирование, иначе тесты падали
 
     def test_user_cant_see_success_message(self, browser):
         link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0'
