@@ -22,5 +22,11 @@ class ProductPage(BasePage):
     def should_be_add_to_basket_button(self):
         assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET_BUTTON), 'Отсутсвует кнопка добавления товара в корзину'
 
+    def cant_see_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.ALERT_ITEM_NAME_ADDED_IN_BASKET)
+
+    def success_message_desapered(self):
+        assert self.is_disappeared(*ProductPageLocators.ALERT_ITEM_NAME_ADDED_IN_BASKET)
+
 
 
