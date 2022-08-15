@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 
 class BasePageLocators():
+    BASKET_BUTTON = (By.CSS_SELECTOR, 'div.basket-mini .btn-default')
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, '#login_link_inc')
 
@@ -18,3 +19,6 @@ class ProductPageLocators():
     ALERT_ITEM_NAME_ADDED_IN_BASKET = (By.CSS_SELECTOR, '#messages  div.alert:nth-child(1) > div.alertinner > strong')
     ALERT_BASKET_PRICE = (By.CSS_SELECTOR, '#messages  div.alert:nth-child(3) > div.alertinner > p > strong')
 
+class BasketPageLocators():
+    ITEMS = (By.CSS_SELECTOR, 'basket-items')
+    NO_ITEMS_ALERT = (By.CSS_SELECTOR, 'div.content > #content_inner > p')
