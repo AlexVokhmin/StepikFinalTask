@@ -1,8 +1,6 @@
 import random
 import string
 import time
-
-
 import pytest
 from pages.product_page import ProductPage
 from pages.basket_page import BasketPage
@@ -37,8 +35,8 @@ class TestUserAddToBasketFromProductPage:
         product_page.should_be_add_to_basket_button()
         product_page.add_to_basket()
         product_page.solve_quiz_and_get_code()
-        product_page.compare_alert_item_name_with_item_name()
         product_page.compare_alert_price_with_item_price()
+        product_page.compare_alert_item_name_with_item_name()
 
 
 #закомментил параметризацию для упрощения проверки
